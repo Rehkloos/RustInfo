@@ -10,10 +10,11 @@ import traceback
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('DISC_TOKEN')
+TOKEN = os.getenv('DISCORD')
+BMSID = os.getenv('battleMetricsServerID')
 
 #rustycorns
-battleMetricsServerID = 9908382
+# battleMetricsServerID = 9908382
 
 
 def get_prefix(bot, message):
@@ -62,7 +63,7 @@ async def on_ready():
 
 @tasks.loop(seconds=60)
 async def change_status():
-    serverData = await makeWebRequest(f"https://api.battlemetrics.com/servers/{battleMetricsServerID}")
+    serverData = await makeWebRequest(f"https://api.battlemetrics.com/servers/" + BMSID)
     if serverData == None:
         return
 
