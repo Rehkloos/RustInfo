@@ -23,7 +23,7 @@ class ServerInfo(commands.Cog, name='Rust'):
         self.bot = bot
 
     #  RustyCorns server info
-    @commands.command(name='RustyCorns Server info',
+    @commands.command(name='!rustycorns - RustyCorns Server info',
                       aliases=['rustycorns'],
                       help='RustyCorns server info')
     @commands.cooldown(2, 60, BucketType.user)
@@ -53,7 +53,7 @@ class ServerInfo(commands.Cog, name='Rust'):
         await ctx.send(file=file, embed=embed)
 
     #  RustyCorns server info
-    @commands.command(name='RustyCorns Status',
+    @commands.command(name='!rcstatus - RustyCorns Status',
                       aliases=['rcstatus'],
                       help='RustyCorns server status')
     @commands.cooldown(2, 60, BucketType.user)
