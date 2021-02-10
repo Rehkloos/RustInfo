@@ -49,6 +49,7 @@ class ServerInfo(commands.Cog, name='Rust'):
         embed.set_image(url=header)
         file = discord.File("./assets/images/rust_honeycomb.png", filename="rust_honeycomb.png")
         embed.set_thumbnail(url="attachment://rust_honeycomb.png")
+        embed.set_footer(icon_url=self.context.bot.user.avatar_url, text=f'Called by: {self.context.author}')
 
         await ctx.send(file=file, embed=embed)
 
@@ -107,6 +108,7 @@ class ServerInfo(commands.Cog, name='Rust'):
         embed.add_field(name=('Rust World Seed'), value=(rust_world_seed), inline=True)
         embed.add_field(name=('Last Wipe'), value=(is8061), inline=True)
         embed.add_field(name=('Country'), value=(flag), inline=True)
+        embed.set_footer(icon_url=self.context.bot.user.avatar_url, text=f'Called by: {self.context.author}')
 
         await ctx.send(file=file, embed=embed)
 
